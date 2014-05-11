@@ -3,20 +3,46 @@ package com.baptistecarlier.android.googlenowfrdemos;
 import android.app.Activity;
 import android.app.ActionBar;
 import android.app.Fragment;
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.View.OnClickListener;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.LinearLayout;
 import android.os.Build;
 
 public class MainActivity extends Activity {
+	
+	private static OnClickListener myOnCLickListener;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
+		myOnCLickListener = new OnClickListener() {
+			@Override
+			public void onClick(View v) {
+				String url = null;
+				switch (v.getId()) {
+					case R.id.fragmentmain_link_github:
+						url = getApplicationContext().getResources().getString(R.string.links_url_github);
+						break;
+					case R.id.fragmentmain_link_gnow:
+						url = getApplicationContext().getResources().getString(R.string.links_url_gnow);
+						break;
+				}
+				if ( url != null ) {
+					Intent myIntent = new Intent(Intent.ACTION_VIEW, Uri.parse(url));
+					startActivity(myIntent);
+				}
+			}
+			
+		};
 
 		if (savedInstanceState == null) {
 			getFragmentManager().beginTransaction()
@@ -28,7 +54,7 @@ public class MainActivity extends Activity {
 	public boolean onCreateOptionsMenu(Menu menu) {
 
 		// Inflate the menu; this adds items to the action bar if it is present.
-		getMenuInflater().inflate(R.menu.main, menu);
+		//getMenuInflater().inflate(R.menu.main, menu);
 		return true;
 	}
 
@@ -55,10 +81,16 @@ public class MainActivity extends Activity {
 		@Override
 		public View onCreateView(LayoutInflater inflater, ViewGroup container,
 				Bundle savedInstanceState) {
-			View rootView = inflater.inflate(R.layout.fragment_main, container,
-					false);
+			View rootView = inflater.inflate(R.layout.fragment_main, container, false);
+			
+			LinearLayout linksLayout = (LinearLayout) rootView.findViewById(R.id.fragmentmain_layout_links);
+			Button b;
+			b = (Button) rootView.findViewById(R.id.fragmentmain_link_github);
+			b.setOnClickListener(myOnCLickListener);
+			b = (Button) rootView.findViewById(R.id.fragmentmain_link_gnow);
+			b.setOnClickListener(myOnCLickListener);
 			return rootView;
 		}
 	}
-
+	
 }

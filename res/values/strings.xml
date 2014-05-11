@@ -1,8 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <string name="app_name">GoogleNowFrDemos</string>
-    <string name="hello_world">Hello world!</string>
-    <string name="action_settings">Settings</string>
+    <string name="app_name">GoogleNowFr Démos</string>
+    
+    <!--  MAIN -->
+    <string name="main_title">Démonstration de code par GoogleNow.fr</string>
+    <string name="main_intro">"Cette application est une démonstration de code utilisables pour intégrer des applications à Google Now.\r\n\r\nPour tester, il vous suffit d'effectuer la commande vocale suivante :\r\nEcouter XXX."</string>
+    <string name="main_subtitle">Liens</string>
+    
+    <string name="action_settings">Préférences</string>
 
+    <string name="links_name_github">Sources sur GitHub</string>
+    <string name="links_name_gnow">GoogleNow.fr</string>
+    <string name="links_url_github">https://github.com/BapNesS/Android-GoogleNowFrDemos</string>
+    <string name="links_url_gnow">http://www.googlenow.fr/</string>
+        
+    <!-- MUSIQUE -->
+    
+    <string name="music_title">Ecouter XXX</string>
+    <string name="music_query">[%s]</string>
+    
 </resources>
