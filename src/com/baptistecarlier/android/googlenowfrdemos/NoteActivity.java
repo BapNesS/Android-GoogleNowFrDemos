@@ -8,21 +8,23 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.widget.TextView;
 
-public class MusicActivity extends Activity {
+public class NoteActivity extends Activity {
 
 	@Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        this.setContentView(R.layout.activity_music);
+        this.setContentView(R.layout.activity_note);
 
         String query = "";
-        if (isMusicIntent(getIntent())) {
-            // Correspondant au contenu musical à jouer.
-        	query = getIntent().getStringExtra(SearchManager.QUERY);
-
+        if (isNoteIntent(getIntent()) ) {
+            // Correspondant au contenu de la note.
+            if (getIntent().getExtras().containsKey(Intent.EXTRA_TEXT)) {
+            	query = getIntent().getExtras().getString(Intent.EXTRA_TEXT);
+            }
+        	
             // On formate simplement le résultat de la requête pour l'affichage.
-            TextView tv = (TextView) findViewById(R.id.musicactivity_tv_query);
-            String formattable = getResources().getString(R.string.music_query);
+            TextView tv = (TextView) findViewById(R.id.noteactivity_tv_query);
+            String formattable = getResources().getString(R.string.note_query);
     		Formatter formatter = new Formatter().format(formattable, query);
             tv.setText( formatter.toString() );  
         }      
@@ -31,11 +33,11 @@ public class MusicActivity extends Activity {
 	/*
 	 * Vérification de l'Intent.
 	 */
-	private boolean isMusicIntent(final Intent intent) {
+    private boolean isNoteIntent(final Intent intent) {
         if (intent == null) {
             return false;
         }
-        return ("android.media.action.MEDIA_PLAY_FROM_SEARCH".equals(intent.getAction()));
+        return ("com.google.android.gm.action.AUTO_SEND".equals(intent.getAction()));
     }
 
 }

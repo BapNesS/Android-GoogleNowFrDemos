@@ -5,7 +5,7 @@
     
     <!--  MAIN -->
     <string name="main_title">Démonstration de code par GoogleNow.fr</string>
-    <string name="main_intro">"Cette application est une démonstration de code utilisables pour intégrer des applications à Google Now.\r\n\r\nPour tester, il vous suffit d'effectuer la commande vocale suivante :\r\nEcouter XXX."</string>
+    <string name="main_intro">"Cette application est une démonstration de code utilisables pour intégrer des applications à Google Now.\r\n\r\nPour tester, il vous suffit d'effectuer les commandes vocales suivantes :\r\n- Ecouter XXX.\r\n- Note à moi-même XXX."</string>
     <string name="main_subtitle">Liens</string>
     
     <string name="action_settings">Préférences</string>
@@ -15,9 +15,14 @@
     <string name="links_url_github">https://github.com/BapNesS/Android-GoogleNowFrDemos</string>
     <string name="links_url_gnow">http://www.googlenow.fr/</string>
         
-    <!-- MUSIQUE -->
+    <!-- Music -->
     
-    <string name="music_title">Ecouter XXX</string>
+    <string name="music_title">Ecouter</string>
     <string name="music_query">[%s]</string>
+        
+    <!-- Note -->
+    
+    <string name="note_title">Note à moi-même</string>
+    <string name="note_query">[%s]</string>
     
 </resources>
