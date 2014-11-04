@@ -4,8 +4,8 @@
     <string name="app_name">GoogleNowFr Démos</string>
     
     <!--  MAIN -->
-    <string name="main_title">Démonstration de code par GoogleNow.fr</string>
-    <string name="main_intro">"Cette application est une démonstration de code utilisables pour intégrer des applications à Google Now.\r\n\r\nPour tester, il vous suffit d'effectuer les commandes vocales suivantes :\r\n- Ecouter XXX.\r\n- Note à moi-même XXX."</string>
+    <string name="main_title">Démonstrations de code par GoogleNow.fr</string>
+    <string name="main_intro">"Cette application est une démonstration de code utilisable pour intégrer des applications à Google Now.\r\n\r\nPour tester, il vous suffit d'effectuer les commandes vocales suivantes :\r\n- Ecouter XXX.\r\n- Note à moi-même XXX.\r\n- Recherche XXX sur [nom de l'application]."</string>
     <string name="main_subtitle">Liens</string>
     
     <string name="action_settings">Préférences</string>
@@ -24,5 +24,10 @@
     
     <string name="note_title">Note à moi-même</string>
     <string name="note_query">[%s]</string>
+        
+    <!-- SearchAction -->
+    
+    <string name="searchaction_title">Action de recherche</string>
+    <string name="searchaction_query">[%s]</string>
     
 </resources>
