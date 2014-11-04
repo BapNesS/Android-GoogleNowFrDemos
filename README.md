@@ -85,6 +85,6 @@ Pour tester ce code, il vous faudra utiliser la commmande adb suivante :
 public void onCreate(Bundle savedInstanceState) {
   super.onCreate(savedInstanceState);
   String query = getIntent().getStringExtra(SearchManager.QUERY);
-  // query = "Intitulé à recherché";
+  // query = "Intitulé de l'élément à rechercher";
 }
 ```
